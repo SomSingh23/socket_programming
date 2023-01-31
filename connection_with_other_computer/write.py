@@ -1,4 +1,4 @@
-name = "som singh lodhi is my name 22333222323"
+name = "this is a socket programming"
 k = name.encode()
 k2 = k.decode()
 
