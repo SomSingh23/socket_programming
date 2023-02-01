@@ -2,7 +2,7 @@
 import socket
 import os # we need this module because socket module use some functions of os 
 import sys
-import write
+import w
 s=socket.socket()
 #host=socket.gethostname()
 host='SOM' # ip address apna if you are connecting with other computer
@@ -19,7 +19,7 @@ while flag:
     input_len = 0
 
     clint_message = c.recv(1024).decode()
-    if clint_message in write.files:
+    if clint_message in w.files:
         print("File found")
         data = "file found on server side content of file is 👇"
 
