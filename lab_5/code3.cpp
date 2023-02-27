@@ -39,6 +39,67 @@ typedef vector<p32> vp32;
 using namespace std;
 
 signed main(){
-// crc code by som 
+	  ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+	 #ifndef ONLINE_JUDGE
+    freopen("Input.txt", "r", stdin);
+    freopen("Output.txt", "w", stdout);
+    freopen("Error.txt", "w", stderr);
+    #endif 
+ time_t now = time(0);
+
+   // convert now to string form
+//  set<int> set = {3,5,7};
+
+//  for(auto x : set)cout<<x<<" ";
+//    char* date_time = ctime(&now);
+// cout<<date_time<<nl;  
+// cout<<"enter input string"<<nl;
+string data;cin>>data;
+// cout<<"enter divisor"<<nl;
+string divisor ;cin>>divisor;
+string new_d = divisor;
+f(i,divisor.length()-1)data+='0';
+string init = "";
+string final_answer = "";
+final_answer+='1';
+f(i,sz(divisor))init+=data[i];
+int count = sz(divisor);
+while(1){
+if(count==data.length()){
+cout<<"final remainder  : ";
+	fs(i,1,sz(divisor)){
+		if(divisor[i]!=init[i]){cout<<'1';}
+		else cout<<'0';
+	}cout<<nl;
+
+
+
+	break;}
+	string som = "";
+	f(i,sz(divisor)){
+		if(divisor[i]!=init[i]){som+='1';}
+		else som+='0';
+	}
+string konsa = som.substr(1,som.length());
+konsa+=data[count];count++;
+init=konsa;
+cout<<"Remainder " << init<<nl;
+if(init[0]=='0'){
+final_answer+='0';
+int kitna = divisor.length();divisor.clear();
+f(i,kitna){
+divisor+='0';
+}
+
+}
+else{
+	final_answer+='1';
+	divisor = new_d;
+}
+}
+
+cout<<"quoitent : " <<final_answer<<nl;
 
 return 0 ;}
